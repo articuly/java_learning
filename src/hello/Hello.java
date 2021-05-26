@@ -18,6 +18,9 @@ public class Hello {
 
         String s = "China is a great country";
         int pos = s.indexOf("a");
+        String ss;
+        ss = s.substring(1);
+        System.out.println(ss);
         System.out.println(pos);
     }
 }
