@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 public class ResultFlagging {
     public static void main(String[] args) {
-        String s = "abc * (#ghi";
+        String s = "YEAS ; 3 (#";
         String f0 = new String();
         String f1 = new String();
         String f2 = new String();
@@ -13,18 +13,20 @@ public class ResultFlagging {
         BigDecimal l = new BigDecimal(1.0);
         BigDecimal h = new BigDecimal(9.0);
         // null point
-        BigDecimal rn = new BigDecimal("null");
+        BigDecimal rn = new BigDecimal("12.5");
         if (String.valueOf(rn) == null){
             System.out.println("cond rn is null");
         } else{
             System.out.println("cond rn is not null");
         }
+
         p1 = s.lastIndexOf(" ") + 1;
         p2 = s.lastIndexOf(" ", p1 - 2) + 1;
         System.out.println("p1 is " + p1);
         System.out.println("p2 is " + p2);
+        System.out.println("len is " + s.length());
 
-        if (p1 > 0 && p2 > 0 && s.substring(p1, p1 + 2).equals("(#")) {
+        if (p1 > 0 && p2 > 0 && p1+2 <= s.length() && s.substring(p1, p1 + 2).equals("(#")) {
             f0 = s.substring(p2, p1 - 1).trim();
             System.out.println("A cond");
         } else {

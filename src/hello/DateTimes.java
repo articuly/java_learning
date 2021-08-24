@@ -10,14 +10,25 @@ public class DateTimes {
         String dateStr = df.format(now);
         System.out.println(dateStr);
 
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss.SSS");
-        String dateString = "20210121125931.123";
+        SimpleDateFormat sdf1 = new SimpleDateFormat("yyyyMMddHHmmss.SSS");
+        SimpleDateFormat sdf2 = new SimpleDateFormat("yyyyMMddHHmmss");
+        String dateString = "20160824122159";
+        if (dateString == null) {
+            System.out.println("null pointer");
+        }
         try {
-            Date date = sdf.parse(dateString);
-            System.out.println(date.toString());
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            e.printStackTrace();
+            Date date1 = sdf1.parse(dateString);
+            System.out.println(date1.toString());
+        } catch (Exception e1) {
+            try {
+                Date date2 = sdf2.parse(dateString);
+                System.out.println(date2.toString());
+            } catch (Exception e2) {
+                //System.out.println(e2.getMessage());
+                //e2.printStackTrace();
+            }
+            //System.out.println(e1.getMessage());
+            //e1.printStackTrace();
         }
     }
 }
