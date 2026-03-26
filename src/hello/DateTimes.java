@@ -10,6 +10,7 @@ public class DateTimes {
         String dateStr = df.format(now);
         System.out.println(dateStr);
 
+
         SimpleDateFormat sdf1 = new SimpleDateFormat("yyyyMMddHHmmss.SSS");
         SimpleDateFormat sdf2 = new SimpleDateFormat("yyyyMMddHHmmss");
         String dateString = "20160824122159";
